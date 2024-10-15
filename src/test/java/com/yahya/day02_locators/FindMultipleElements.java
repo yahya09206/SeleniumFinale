@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-public class FindByPartialText_GetText_Method {
+public class FindMultipleElements {
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
@@ -19,12 +19,17 @@ public class FindByPartialText_GetText_Method {
         WebElement addRemove = driver.findElement(By.partialLinkText("Disappearing"));
         System.out.println(addRemove.getText());
 
-        // Provide partial link as the letter "a"
-        // Should return the first one
-        WebElement aLinks = driver.findElement(By.partialLinkText("A"));
-        System.out.println("aLinks.getText() = " + aLinks.getText());
+        // Find all elements that match partial link text
+        List<WebElement> allALinks = driver.findElements(By.partialLinkText("A"));
+        System.out.println(allALinks.size());
+        for (WebElement allALink : allALinks) {
+            System.out.println(allALink.getText());
+        }
+
+        // Get the first item
+        WebElement firstItem = allALinks.get(0);
+        System.out.println(firstItem.getText());
 
         driver.quit();
-
     }
 }
