@@ -31,7 +31,7 @@ public class LinkTextPartialLinkText {
         driver.findElement(By.linkText("Home")).click();
         Thread.sleep(1500);
         // click on "Redirect Link"
-        WebElement redirect = driver.findElement(By.linkText("Redirect"));
+        WebElement redirect = driver.findElement(By.linkText("Redirect Link"));
         Thread.sleep(1500);
 
         driver.quit();
