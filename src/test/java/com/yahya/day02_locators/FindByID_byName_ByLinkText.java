@@ -21,7 +21,7 @@ public class FindByID_byName_ByLinkText {
         passwordBox.sendKeys("bla bla");
 
         WebElement loginBtn = driver.findElement(By.name("login"));
-        loginBtn.clear();
+        loginBtn.click();
 
         Thread.sleep(3000);
         driver.quit();
