@@ -25,6 +25,7 @@ public class LinkTextPartialLinkText {
         driver.manage().window().maximize();
         // click on second link
         WebElement secondLink = driver.findElement(By.linkText("Add/Remove Elements"));
+        secondLink.getText();
         secondLink.click();
         Thread.sleep(1500);
         // click on "Home" link to go back home
