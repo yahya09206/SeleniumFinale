@@ -24,6 +24,10 @@ public class FindByID_byName_ByLinkText {
         loginBtn.click();
 
         Thread.sleep(3000);
+
+        WebElement forgotLink = driver.findElement(By.linkText("Forgot password?"));
+        forgotLink.click();
+
         driver.quit();
     }
 }
