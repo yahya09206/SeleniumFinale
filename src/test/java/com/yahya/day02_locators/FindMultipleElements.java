@@ -30,6 +30,10 @@ public class FindMultipleElements {
         WebElement firstItem = allALinks.get(0);
         System.out.println(firstItem.getText());
 
+        // Get the second item
+        WebElement secondItem = allALinks.get(1);
+        System.out.println(secondItem.getText());
+
         driver.quit();
     }
 }
