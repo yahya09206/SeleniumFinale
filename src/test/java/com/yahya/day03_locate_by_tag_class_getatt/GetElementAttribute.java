@@ -29,6 +29,13 @@ public class GetElementAttribute {
         // use value attribute of input text box to extract the text inside
         System.out.println(searchBox.getAttribute("value"));
 
+        // get attributes of search button
+        WebElement searchBtn = driver.findElement(By.name("btnK"));
+
+        System.out.println(searchBtn.getAttribute("class"));
+        System.out.println(searchBtn.getAttribute("type"));
+        System.out.println(searchBtn.getAttribute("value"));
+
         driver.quit();
     }
 }
