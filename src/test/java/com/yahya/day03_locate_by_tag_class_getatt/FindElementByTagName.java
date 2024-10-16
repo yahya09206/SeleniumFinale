@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class FindElementByTagName {
     public static void main(String[] args) {
 
@@ -22,6 +24,13 @@ public class FindElementByTagName {
 
         WebElement firstLink = driver.findElement(By.tagName("a"));
         System.out.println(firstLink.getText());
+
+        List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+        System.out.println(allLinks.size());
+        for (WebElement allLink : allLinks) {
+            System.out.println("allLink.getText() = " + allLink.getText());
+            System.out.println(allLink.getAttribute("href"));
+        }
 
         driver.quit();
     }
