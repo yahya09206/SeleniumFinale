@@ -22,8 +22,12 @@ public class GetElementAttribute {
         driver.navigate().to("https://google.com");
 
         WebElement searchBox = driver.findElement(By.id("APjFqb"));
+        searchBox.sendKeys("Selenium ftw!!!");
         System.out.println(searchBox.getAttribute("title"));
         System.out.println(searchBox.getAttribute("spellcheck"));
+
+        // use value attribute of input text box to extract the text inside
+        System.out.println(searchBox.getAttribute("value"));
 
         driver.quit();
     }
