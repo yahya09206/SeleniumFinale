@@ -1,7 +1,9 @@
 package com.yahya.day03_locate_by_tag_class_getatt;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class GetElementAttribute {
@@ -11,6 +13,11 @@ public class GetElementAttribute {
         WebDriver driver = new ChromeDriver();
         driver.navigate().to("https://practice.cydeo.com");
 
+        // get the first link on the page and get href attribute
+        WebElement firstLink = driver.findElement(By.partialLinkText("A/B"));
+        System.out.println(firstLink.getText());
+        System.out.println(firstLink.getAttribute("href"));
 
+        driver.quit();
     }
 }
