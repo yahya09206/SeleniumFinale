@@ -18,6 +18,13 @@ public class GetElementAttribute {
         System.out.println(firstLink.getText());
         System.out.println(firstLink.getAttribute("href"));
 
+        // navigate to google.com and identify searchbox and get a couple of attributes values
+        driver.navigate().to("https://google.com");
+
+        WebElement searchBox = driver.findElement(By.id("APjFqb"));
+        System.out.println(searchBox.getAttribute("title"));
+        System.out.println(searchBox.getAttribute("spellcheck"));
+
         driver.quit();
     }
 }
