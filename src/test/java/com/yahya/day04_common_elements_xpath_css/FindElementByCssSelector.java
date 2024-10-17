@@ -17,6 +17,7 @@ public class FindElementByCssSelector {
 
         WebElement searchBox = driver.findElement(By.cssSelector("input[name='p'"));
         searchBox.sendKeys("Selenium FTW!!!!");
+        // Can't get text using cssSelector
         System.out.println("searchBox.getText() = " + searchBox.getText());
         Thread.sleep(1500);
 
