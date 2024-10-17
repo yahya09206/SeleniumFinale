@@ -23,6 +23,21 @@ public class FindElementsByXPath {
         WebElement headSpan = driver.findElement(By.xpath("//h1/span"));
         System.out.println(headSpan.getText());
 
+        // providing attributes in xpath
+        // elementTag[@attributeName='attribute value']
+        // if you have more than 1 attribute
+            // elementTag[@attributeName='attribute value' and @attributeName='attributeValue']
+        // also have the option to provide index
+        // can also provide use text() xpath function
+            // //elementTag[text()='some text value goes here']
+
+        // click on checkboxes link to go to checkboxes page
+        driver.findElement(By.xpath("//li/a[text()='Checkboxes']")).click();
+
+        // identify header and get the text from 1st checkbox
+        WebElement h1Text = driver.findElement(By.xpath("//span[text()='Checkbox 1']"));
+        System.out.println("h1Text.getText() = " + h1Text.getText());
+
         driver.quit();
     }
 }
