@@ -2,6 +2,7 @@ package com.yahya.tests.day05_css_xpath_junit5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -19,17 +20,24 @@ public class YahooSearchPage {
      * test when you search for Selenium the title should start with selenium
      */
 
-    @Test
-    public void testYahooSearchHomePageTitle(){
+    WebDriver driver = new ChromeDriver();
+
+    @BeforeEach
+    public void yahooPage(){
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.navigate().to("https://search.yahoo.com/");
+
+    }
+
+    @Test
+    public void testYahooSearchHomePageTitle(){
 
         String expectedTitle = "Yahoo Search - Web Search";
         Assertions.assertEquals(expectedTitle, driver.getTitle());
 
         driver.quit();
+
     }
 
     @Test
