@@ -19,9 +19,11 @@ public class FirstTest {
 
         String msg = "I love selenium";
         // Assert that the message equals "I love selenium"
+        // below assert method accepts 2 params
         Assertions.assertEquals("I love selenium", msg);
 
         // Assert this message starts with "I love"
+        // Assert true accepts 1 param as boolean
         Assertions.assertTrue(msg.startsWith("I love"));
     }
 }
