@@ -32,7 +32,7 @@ public class YahooSearchPage {
     }
 
     @AfterEach
-    public void exitDriver(){
+    public void tearDown(){
 
         driver.quit();
     }
