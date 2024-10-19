@@ -2,6 +2,7 @@ package com.yahya.tests.day06_junit_utility_methods;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -37,6 +38,13 @@ public class LoginFormTest {
 
         driver.findElement(By.xpath("//div/input[@name='username']")).sendKeys("tomsmith");
         driver.findElement(By.xpath("//div/input[@name='password']")).sendKeys("SuperSecretPassword");
+
+        driver.findElement(By.id("wooden_spoon")).click();
+
+        WebElement successMsg = driver.findElement(By.xpath("//div/div[@class='flash success']"));
+
+        String expectedResult = "You logged into a secure area!";
+        Assertions.assertEquals(expectedResult, successMsg.getText());
     }
 
 
