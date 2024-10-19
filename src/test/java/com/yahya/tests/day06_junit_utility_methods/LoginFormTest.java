@@ -34,6 +34,9 @@ public class LoginFormTest {
 
         WebElement header = driver.findElement(By.xpath("//h2[.='Login Page'"));
         System.out.println("header.getText() = " + header.getText());
+
+        driver.findElement(By.xpath("//div/input[@name='username']")).sendKeys("tomsmith");
+        driver.findElement(By.xpath("//div/input[@name='password']")).sendKeys("SuperSecretPassword");
     }
 
 
