@@ -2,6 +2,7 @@ package com.yahya.tests.day06_junit_utility_methods;
 
 import com.yahya.utility.TestBase;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 
 public class AlertTests extends TestBase {
@@ -27,6 +28,8 @@ public class AlertTests extends TestBase {
             // accept() --> click ok button
             // dismiss() --> click on cancel button
             // sendKey(yourText) --> enter text into prompts
+            // getText() --> get the text of the alert box
+        System.out.println("driver.switchTo().alert().getText() = " + driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
         System.out.println("The End!!");
     }
