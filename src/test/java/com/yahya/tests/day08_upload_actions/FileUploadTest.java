@@ -1,5 +1,6 @@
 package com.yahya.tests.day08_upload_actions;
 
+import com.yahya.utility.BrowserUtil;
 import com.yahya.utility.TestBase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -9,7 +10,7 @@ import org.openqa.selenium.WebElement;
 public class FileUploadTest extends TestBase {
 
     @Test
-    public void testUpload() throws InterruptedException {
+    public void testUpload()  {
 
         driver.get("https://practice.cydeo.com/upload");
 
@@ -19,9 +20,10 @@ public class FileUploadTest extends TestBase {
         fileInputField.sendKeys(filePath);
 
         driver.findElement(By.xpath("//input[@id='file-submit']")).click();
-        Thread.sleep(1500);
+        BrowserUtil.waitFor(2);
 
         WebElement successMsg = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
         Assertions.assertTrue(successMsg.isDisplayed());
+        BrowserUtil.waitFor(2);
     }
 }
