@@ -6,9 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestBase {
+/**
+ * This is meant to be a superclass
+ * to provide a driver set up and to close the browser for its subclasses
+ */
 
-    WebDriver driver;
+public abstract class TestBase {
+
+    protected WebDriver driver;
 
     @BeforeEach
     public void setupWebDriver(){
@@ -20,7 +25,6 @@ public class TestBase {
 
     @AfterEach
     public void tearDown(){
-
         driver.quit();
     }
 }
