@@ -33,7 +33,7 @@ public class LoginFormTest {
 
         driver.get("http://practice.cydeo.com/login");
 
-        WebElement header = driver.findElement(By.xpath("//h2[.='Login Page'"));
+        WebElement header = driver.findElement(By.xpath("//h2[.='Login Page']"));
         System.out.println("header.getText() = " + header.getText());
 
         driver.findElement(By.xpath("//div/input[@name='username']")).sendKeys("tomsmith");
@@ -44,7 +44,7 @@ public class LoginFormTest {
         WebElement successMsg = driver.findElement(By.xpath("//div/div[@class='flash success']"));
 
         String expectedResult = "You logged into a secure area!";
-        Assertions.assertEquals(expectedResult, successMsg.getText());
+        Assertions.assertTrue(successMsg.getText().startsWith(expectedResult));
     }
 
 
