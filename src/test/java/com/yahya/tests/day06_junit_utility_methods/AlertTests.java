@@ -31,6 +31,13 @@ public class AlertTests extends TestBase {
             // getText() --> get the text of the alert box
         System.out.println("driver.switchTo().alert().getText() = " + driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
+
+        driver.findElement(By.xpath("//button[.='Click for JS Confirm']")).click();
+        driver.switchTo().alert().accept();
+
+        driver.findElement(By.xpath("//button[.='Click for JS Prompt']")).click();
+        driver.switchTo().alert().sendKeys("Hello");
+        driver.switchTo().alert().accept();
         System.out.println("The End!!");
     }
 }
