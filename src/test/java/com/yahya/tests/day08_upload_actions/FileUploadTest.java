@@ -1,6 +1,7 @@
 package com.yahya.tests.day08_upload_actions;
 
 import com.yahya.utility.TestBase;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -19,5 +20,8 @@ public class FileUploadTest extends TestBase {
 
         driver.findElement(By.xpath("//input[@id='file-submit']")).click();
         Thread.sleep(1500);
+
+        WebElement successMsg = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
+        Assertions.assertTrue(successMsg.isDisplayed());
     }
 }
