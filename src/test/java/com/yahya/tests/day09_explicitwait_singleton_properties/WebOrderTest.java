@@ -5,6 +5,7 @@ import com.yahya.utility.TestBase;
 import com.yahya.utility.WebOrderUtility;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class WebOrderTest extends TestBase {
 
@@ -16,8 +17,9 @@ public class WebOrderTest extends TestBase {
 //        driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
 //        driver.findElement(By.id("ctl00_MainContent_login_button")).click();
 
-        WebOrderUtility.login(driver);
+        //WebOrderUtility.login(driver);
         WebOrderUtility.login(driver, "Tester", "test");
+        WebOrderUtility.logout(driver);
 
         BrowserUtil.waitFor(4);
     }

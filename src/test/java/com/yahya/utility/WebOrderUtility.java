@@ -18,4 +18,8 @@ public class WebOrderUtility {
         driverParam.findElement(By.id("ctl00_MainContent_password")).sendKeys(password);
         driverParam.findElement(By.id("ctl00_MainContent_login_button")).click();
     }
+
+    public static void logout(WebDriver driver){
+        driver.findElement(By.id("ctl00_logout")).click();
+    }
 }
