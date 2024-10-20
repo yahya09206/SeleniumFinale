@@ -22,12 +22,15 @@ public class ExplicitWaitTest extends TestBase {
         //3. The title will show loading.. until a certain time
         // wait until the title value becomes "Dynamic Title"
         // this is how you create WebDriverWait object with driver and a max time to wait
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // then we use the until method that accepts expected conditions
         // ExpectedConditions helper class has a lot of pre-written conditions
         // for common scenarios, so we don't have to build our own
         // in this case we are checking for title equals dynamic title
-        wait.until(ExpectedConditions.titleIs("Dynamic title"));
+        // wait.until(ExpectedConditions.titleIs("Dynamic title"));
+
+        // trying a different condition such as waiting for image to appear
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@alt='square pants']")));
 
         System.out.println("THE END!");
 
