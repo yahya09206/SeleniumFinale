@@ -55,5 +55,10 @@ public class ExplicitWaitTest extends TestBase {
         // trying a different condition such as waiting for image to appear
         wait.until(visibilityOfElementLocated(By.xpath("//img[@alt='square pants']")));
 
+        // had to re-locate the element because the attributes have changed, driver cannot find it anymore
+        // element is no longer in the dom
+        alertArea = driver.findElement(By.id("alert"));
+        System.out.println("alertArea.getText() = " + alertArea.getText());
+
     }
 }
