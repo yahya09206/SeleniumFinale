@@ -17,9 +17,8 @@ public class WebOrderTest extends TestBase {
 //        driver.findElement(By.id("ctl00_MainContent_login_button")).click();
 
         WebOrderUtility.login(driver);
+        WebOrderUtility.login(driver, "Tester", "test");
 
         BrowserUtil.waitFor(4);
-
-
     }
 }
