@@ -15,7 +15,7 @@ public class ExplicitWaitTest extends TestBase {
     public void testWaitForTitle(){
 
         //1. navigate to https://practice.cydeo.com/dynamic_loading/7
-        driver.get("https://practice.cydeo.com/dynamic_loading/7");
+        driver.get("https://practice.cydeo.com/dynamic_loading");
         //2. click on example 7
         driver.findElement(By.partialLinkText("Example 7")).click();
 
@@ -27,7 +27,7 @@ public class ExplicitWaitTest extends TestBase {
         // ExpectedConditions helper class has a lot of pre-written conditions
         // for common scenarios, so we don't have to build our own
         // in this case we are checking for title equals dynamic title
-        wait.until(ExpectedConditions.titleIs("Dynamic Title"));
+        wait.until(ExpectedConditions.titleIs("Dynamic title"));
 
         System.out.println("THE END!");
 
