@@ -4,6 +4,7 @@ import com.yahya.utility.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -36,7 +37,23 @@ public class ExplicitWaitTest extends TestBase {
 
         System.out.println("THE END!");
 
+    }
 
+    @Test
+    public void testByTextToBe(){
+
+        //1. navigate to https://practice.cydeo.com/dynamic_loading/7
+        driver.get("https://practice.cydeo.com/dynamic_loading");
+        //2. click on example 7
+        driver.findElement(By.partialLinkText("Example 7")).click();
+
+        WebElement alertArea = driver.findElement(By.id("alert"));
+        System.out.println("alertArea.getText() = " + alertArea.getText());
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // trying a different condition such as waiting for image to appear
+        wait.until(visibilityOfElementLocated(By.xpath("//img[@alt='square pants']")));
 
     }
 }
