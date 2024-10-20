@@ -21,10 +21,8 @@ public class Driver {
         if (obj == null){
             WebDriverManager.chromedriver().setup();
             obj = new ChromeDriver();
-            System.out.println("One and only instance");
             return obj;
         } else {
-            System.out.println("Instance already exists");
             return obj;
         }
     }
