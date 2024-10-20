@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
+
 public class ExplicitWaitTest extends TestBase {
 
     @Test
@@ -30,7 +32,7 @@ public class ExplicitWaitTest extends TestBase {
         // wait.until(ExpectedConditions.titleIs("Dynamic title"));
 
         // trying a different condition such as waiting for image to appear
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@alt='square pants']")));
+        wait.until(visibilityOfElementLocated(By.xpath("//img[@alt='square pants']")));
 
         System.out.println("THE END!");
 
