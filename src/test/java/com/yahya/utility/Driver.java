@@ -21,21 +21,24 @@ public class Driver {
 
         String browserName = ConfigReader.read("browser");
 
-        switch (browserName.toLowerCase()){
+        if (obj == null){
+            switch (browserName.toLowerCase()){
 
-            case "chrome":
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-                break;
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    obj = new ChromeDriver();
+                    break;
 
-            case "firefox":
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                break;
-            default:
-                driver = null;
-                System.out.println("UNKNOWN BROWSER TYPE " + browserName);;
-        }
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    obj = new FirefoxDriver();
+                    break;
+                default:
+                    obj = null;
+                    System.out.println("UNKNOWN BROWSER TYPE " + browserName);;
+            }
+            return obj;
+        } else {
             return obj;
         }
     }
