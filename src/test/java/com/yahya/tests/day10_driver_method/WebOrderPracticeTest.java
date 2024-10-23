@@ -28,5 +28,6 @@ public class WebOrderPracticeTest extends TestBase {
         WebOrderUtil.login("bla", "bla");
 
         WebElement errorMsg = Driver.getDriver().findElement(By.id("ctl00_MainContent_status"));
+        Assertions.assertTrue(errorMsg.isDisplayed());
     }
 }
