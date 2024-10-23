@@ -1,5 +1,6 @@
 package com.yahya.tests.day10_driver_method;
 
+import com.yahya.utility.ConfigReader;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
@@ -28,4 +29,11 @@ public class PropertyFileReadTest {
     }
 
 
+    @Test
+    public void testReadingFileFromUtilityClass(){
+
+        System.out.println("ConfigReader.read(\"hello\") = " + ConfigReader.read("hello"));
+        System.out.println("ConfigReader.read(\"weborder-username\") = " + ConfigReader.read("weborder_username"));
+        System.out.println("ConfigReader.read(\"webdorder-password\") = " + ConfigReader.read("weborder_password"));
+    }
 }
