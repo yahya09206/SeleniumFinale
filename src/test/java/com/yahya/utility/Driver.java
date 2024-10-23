@@ -3,6 +3,7 @@ package com.yahya.utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * A class with a method that will only return a Single object no matter how many times you ask for it
@@ -18,11 +19,23 @@ public class Driver {
 
     public static WebDriver getDriver(){
 
-        if (obj == null){
-            WebDriverManager.chromedriver().setup();
-            obj = new ChromeDriver();
-            return obj;
-        } else {
+        String browserName = ConfigReader.read("browser");
+
+        switch (browserName.toLowerCase()){
+
+            case "chrome":
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                break;
+
+            case "firefox":
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+                break;
+            default:
+                driver = null;
+                System.out.println("UNKNOWN BROWSER TYPE " + browserName);;
+        }
             return obj;
         }
     }
