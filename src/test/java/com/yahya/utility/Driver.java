@@ -26,4 +26,17 @@ public class Driver {
             return obj;
         }
     }
+
+    public static void closeBrowser(){
+        // check if we have WebDriver instance or not
+        // basically checking if obj is null or not
+        // if not null
+        // quit the browser
+        // make it null , because once quit it can not be used
+        if(obj != null ){
+            obj.quit();
+            // so when ask for it again , it gives us not quited fresh driver
+            obj = null ;
+        }
+    }
 }
