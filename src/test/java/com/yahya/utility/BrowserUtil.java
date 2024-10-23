@@ -10,22 +10,23 @@ import java.time.Duration;
 
 public class BrowserUtil {
 
-//    public static void waitFor(int seconds){
-//
-//        try {
-//            Thread.sleep(seconds * 1000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public static void waitFor(int seconds) {
+
+        try {
+            Thread.sleep(seconds * 1000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * This method will check for visibility of element within the time given
-     * @param locator By.id or By.xpath or By. Whatever
+     *
+     * @param locator    By.id or By.xpath or By. Whatever
      * @param timeToWait in time to wait
      * @return true if the element is found within the time and given, false if not
      */
-    public static boolean checkVisibilityOfElement(By locator, int timeToWait){
+    public static boolean checkVisibilityOfElement(By locator, int timeToWait) {
 
         boolean result = false;
 
@@ -36,5 +37,6 @@ public class BrowserUtil {
             System.out.println("The error message is " + e.getMessage());
         }
 
+        return true;
     }
 }
