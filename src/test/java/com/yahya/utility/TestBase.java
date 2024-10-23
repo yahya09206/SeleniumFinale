@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.yahya.utility.Driver.getDriver;
+
 /**
  * This is meant to be a superclass
  * to provide a driver set up and to close the browser for its subclasses
@@ -30,6 +32,6 @@ public abstract class TestBase {
 
     @AfterEach
     public void tearDown(){
-        Driver.getDriver().quit();
+        driver.quit();
     }
 }
