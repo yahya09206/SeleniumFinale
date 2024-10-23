@@ -15,10 +15,10 @@ public class WebOrderPracticeTest extends TestBase {
     public void testDriverPractice(){
 
         WebOrderUtil.openWebOrderApp();
-        Assertions.assertEquals("Web Orders Login", driver.getTitle());
-        BrowserUtil.waitFor(2);
         //WebOrderUtil.login();
         WebOrderUtil.login("Tester", "test");
+        BrowserUtil.waitFor(2);
+        Assertions.assertEquals("Web Orders", Driver.getDriver().getTitle());
     }
 
     @Test
