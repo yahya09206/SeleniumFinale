@@ -10,5 +10,6 @@ public class WebOrderPracticeTest extends TestBase {
     public void testDriverPractice(){
 
         WebOrderUtil.openWebOrderApp();
+        WebOrderUtil.login();
     }
 }
