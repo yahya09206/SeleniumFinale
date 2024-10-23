@@ -32,6 +32,6 @@ public abstract class TestBase {
 
     @AfterEach
     public void tearDown(){
-        driver.quit();
+        Driver.closeBrowser();
     }
 }
