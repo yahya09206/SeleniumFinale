@@ -25,6 +25,7 @@ public class PropertyFileReadTest {
         String helloValue = myProperty.getProperty("hello");
         System.out.println("helloValue = " + helloValue);
 
-
     }
+
+
 }
