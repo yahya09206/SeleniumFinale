@@ -11,7 +11,7 @@ public class WLogin {
     public WebElement userNameField;
     @FindBy(name = "ctl00$MainContent$password")
     public WebElement passwordField;
-    @FindBy(css = "ctl00_MainContent_login_button")
+    @FindBy(css = "#ctl00_MainContent_login_button")
     public WebElement loginButton;
 
     // instruct selenium to start looking for element
