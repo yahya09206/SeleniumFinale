@@ -21,4 +21,12 @@ public class WLogin {
         // WebDriver instance and Page class instance(this) means current instance of "this" class
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    /**
+     * Method for navigating to actual website
+     * accepts no params
+     */
+    public void goTo(){
+        Driver.getDriver().navigate().to("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx?");
+    }
 }
