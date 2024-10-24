@@ -1,9 +1,11 @@
 package com.yahya.tests.day11_property_driver_faker_pom;
 
 import com.yahya.pages.WLogin;
+import com.yahya.utility.BrowserUtil;
 import com.yahya.utility.ConfigReader;
 import com.yahya.utility.Driver;
 import com.yahya.utility.TestBase;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class WebOrderPOM_Test extends TestBase {
@@ -15,8 +17,11 @@ public class WebOrderPOM_Test extends TestBase {
         WLogin login = new WLogin();
 
         login.goTo();
-        //login.login("Tester", "test");
-        login.login(ConfigReader.read("weborder_username"), ConfigReader.read("weborder_password"));
+        login.login("Teste", "test");
+        //login.login(ConfigReader.read("weborder_username"), ConfigReader.read("weborder_password"));
+        Assertions.assertTrue(login.loginErrorMsg());
+
+        BrowserUtil.waitFor(2);
 
     }
 }

@@ -13,6 +13,8 @@ public class WLogin {
     public WebElement passwordField;
     @FindBy(css = "#ctl00_MainContent_login_button")
     public WebElement loginButton;
+    @FindBy(xpath = "//span[.='Invalid Login or Password.']")
+    public WebElement errorMsg;
 
     // instruct selenium to start looking for element
     // when this constructor is called
@@ -38,5 +40,14 @@ public class WLogin {
         userNameField.sendKeys(username);
         passwordField.sendKeys(password);
         loginButton.click();
+    }
+
+    /**
+     * Method for checking if the wrong credentials are provided
+     * return the result once displayed
+     */
+    public boolean loginErrorMsg(){
+
+        return this.errorMsg.isDisplayed();
     }
 }
