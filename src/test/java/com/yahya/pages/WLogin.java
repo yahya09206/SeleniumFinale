@@ -29,4 +29,13 @@ public class WLogin {
     public void goTo(){
         Driver.getDriver().navigate().to("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx?");
     }
+
+    /**
+     * Login method
+     */
+    public void login(String username, String password){
+
+        userNameField.sendKeys(username);
+        passwordField.sendKeys(password);
+    }
 }

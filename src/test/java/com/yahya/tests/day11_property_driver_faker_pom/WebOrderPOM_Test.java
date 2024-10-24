@@ -13,8 +13,7 @@ public class WebOrderPOM_Test extends TestBase {
 
         WLogin login = new WLogin();
 
-        login.userNameField.sendKeys("Tester");
-        login.passwordField.sendKeys("test");
-        login.loginButton.click();
+        login.goTo();
+
     }
 }
