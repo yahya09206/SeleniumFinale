@@ -37,5 +37,6 @@ public class WLogin {
 
         userNameField.sendKeys(username);
         passwordField.sendKeys(password);
+        loginButton.click();
     }
 }
