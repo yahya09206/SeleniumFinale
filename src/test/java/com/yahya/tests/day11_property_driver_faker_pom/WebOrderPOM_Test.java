@@ -1,5 +1,6 @@
 package com.yahya.tests.day11_property_driver_faker_pom;
 
+import com.yahya.pages.WAllOrderPage;
 import com.yahya.pages.WLogin;
 import com.yahya.utility.BrowserUtil;
 import com.yahya.utility.ConfigReader;
@@ -23,5 +24,23 @@ public class WebOrderPOM_Test extends TestBase {
 
         BrowserUtil.waitFor(2);
 
+    }
+
+    @Test
+    public void testAllOrderPage(){
+
+        WLogin login = new WLogin();
+        login.goTo();
+        login.login("Tester", "test");
+
+        //All order page
+        WAllOrderPage allOrderPage = new WAllOrderPage();
+
+        //Assert that header is display to verify correct page
+        Assertions.assertTrue(allOrderPage.header.isDisplayed());
+
+        allOrderPage.checkAllButton.click();
+        BrowserUtil.waitFor(2);
+        allOrderPage.uncheckAllButton.click();
     }
 }
